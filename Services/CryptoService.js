@@ -9,6 +9,9 @@ module.exports = {
             //Bitcoin
             case "btc":
                 return this.fetchBTCPrice();
+            //Bitcoin Cash
+            case "bch":
+                return this.fetchBCHPrice();
             //Litecoin
             case "ltc":
                 return this.fetchLTCPrice();
@@ -23,6 +26,11 @@ module.exports = {
     },
     fetchBTCPrice: async function () {
         let response = await fetch('https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD&e=coinbase');
+        let data = await response.json();
+        return data;
+    },
+    fetchBCHPrice: async function () {
+        let response = await fetch('https://min-api.cryptocompare.com/data/price?fsym=BCH&tsyms=USD&e=coinbase');
         let data = await response.json();
         return data;
     },
