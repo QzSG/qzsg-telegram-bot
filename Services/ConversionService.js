@@ -2,7 +2,7 @@
 const fx = require('money');
 module.exports = {
     fetchUSDRates: async function () {
-        let url = `https://openexchangerates.org/api/latest.json?base=USD&app_id==${process.env.OER_API}`;
+        let url = `https://openexchangerates.org/api/latest.json?base=USD&app_id=${process.env.OER_API}`;
         let response = await fetch(url);
         let data = await response.json();
         //console.log(data);
