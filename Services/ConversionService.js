@@ -2,7 +2,7 @@
 const fx = require('money');
 module.exports = {
     fetchUSDRates: async function () {
-        let url = `https://data.fixer.io/api/latest?base=USD&access_key=${process.env.FIXER_API}`;
+        let url = `http://data.fixer.io/api/latest?base=USD&access_key=${process.env.FIXER_API}`;
         let response = await fetch(url);
         let data = await response.json();
         //console.log(data);
