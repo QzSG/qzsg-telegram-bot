@@ -14,7 +14,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN);
 
 app.use(bot.webhookCallback('/magic'));
 
-bot.telegram.setWebhook('https://qzsg-telegram-bot.herokuapp.com/magic');
+bot.telegram.setWebhook(process.env.WEBHOOK_URL);
 
 app.get('/', (req, res) => {
     res.redirect('https://telegram.me/QzSG_Bot');
